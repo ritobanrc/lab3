@@ -2,6 +2,8 @@ import static org.junit.Assert.*;
 import org.junit.*;
 
 public class ArrayTests {
+    double eps = 1e-6;
+
     @Test 
     public void testReverseInPlace() {
         int[] input1 = { 3 };
@@ -29,5 +31,10 @@ public class ArrayTests {
         assertArrayEquals(new int[]{ 4, 3, 2, 1 }, input1);
     }
 
+    @Test
+    public void testArrayWithoutLowest() {
+        double r = ArrayExamples.averageWithoutLowest(new double[]{1, 1, 2, 3, 4});
+        assert(Math.abs(3.0 - r) < eps);
+    }
 
 }

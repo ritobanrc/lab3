@@ -9,9 +9,9 @@ RUN_FLAGS = -enableassertions -cp .
 .java.class:
 	javac $(COMPILE_FLAGS) $*.java
 
-MAIN=ArrayExamples
-TESTER=ArrayTests
-CLASSES=$(MAIN).java $(TESTER).java 
+MAIN=
+TESTER=ListTests
+CLASSES=$(TESTER).java ArrayExamples.java FileExample.java LectureExamples.java LinkedListExample.java ListExamples.java MethodsTests.java 
 
 default: build
 
@@ -24,5 +24,5 @@ clean:
 test: build
 	java $(TEST_FLAGS) $(TESTER)
 
-run: build
-	java $(RUN_FLAGS) $(MAIN)
+#run: build
+	#java $(RUN_FLAGS) $(MAIN)
