@@ -27,7 +27,19 @@ public class ListTests {
         String[] arr2 = new String[]{"x", "y", "z"};
         List<String> l2 = new ArrayList(Arrays.asList(arr2));
 
-        List<String> ls = ListExamples.merge(l1, l2);
-        for(String s : ls) System.out.println(ls);
+        List<String> ls1 = ListExamples.merge(l1, l1);
+        String[] target1 = new String[]{"a", "a", "b", "b", "c", "c"};
+        for(int i = 0; i < target1.length; i++) {
+            System.out.print(ls1.get(i) + " ");
+            assertEquals(target1[i], ls1.get(i));
+        }
+        System.out.println();
+
+        List<String> ls2 = ListExamples.merge(l1, l2);
+        String[] target2 = new String[]{"a", "b", "c", "x", "y", "z"};
+        for(int i = 0; i < target2.length; i++) {
+            System.out.print(ls2.get(i) + " ");
+            assertEquals(target2[i], ls2.get(i));
+        }
     }
 }

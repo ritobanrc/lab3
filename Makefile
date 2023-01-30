@@ -11,7 +11,7 @@ RUN_FLAGS = -enableassertions -cp .
 
 MAIN=
 TESTER=ListTests
-CLASSES=$(TESTER).java ArrayExamples.java FileExample.java LectureExamples.java LinkedListExample.java ListExamples.java MethodsTests.java 
+CLASSES=ArrayExamples.java FileExample.java LectureExamples.java LinkedListExample.java ListExamples.java MethodsTests.java $(TESTER).java 
 
 default: build
 
